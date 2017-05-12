@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170512140559) do
+ActiveRecord::Schema.define(version: 20170512142059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "apartaments", force: :cascade do |t|
-    t.string "number"
-    t.float "balance"
-    t.datetime "checkin"
-    t.datetime "checkout"
+    t.string "number", null: false
+    t.float "balance", default: 0.0, null: false
+    t.datetime "checkin", null: false
+    t.datetime "checkout", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

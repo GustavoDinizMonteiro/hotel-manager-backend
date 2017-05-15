@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20170512155652) do
   create_table "admins", force: :cascade do |t|
     t.string "name", null: false
     t.string "username", null: false
-    t.string "password", null: false
+    t.string "password_digest", null: false
     t.boolean "superuser", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

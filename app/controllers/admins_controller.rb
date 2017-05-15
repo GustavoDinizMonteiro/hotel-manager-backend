@@ -15,7 +15,9 @@ class AdminsController < ApplicationController
 
   # POST /admins
   def create
-    @admin = Admin.new(admin_params)
+    @admin = Admin.new(username: admin_params[:username],
+                       name: admin_params[:name],
+                       password: admin_params[:password_digest])
 
     if @admin.save
       render json: @admin, status: :created, location: @admin
@@ -46,6 +48,6 @@ class AdminsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def admin_params
-      params.require(:admin).permit(:name, :username, :password, :superuser)
+      params.require(:admin).permit(:name, :username, :password_digest)
     end
 end

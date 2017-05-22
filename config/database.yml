@@ -17,8 +17,9 @@
 default: &default
   adapter: postgresql
   encoding: utf8
-  username: root
   host: localhost
+  username: hotel_manager
+  password: hotel_manager
   pool: 5
   wait_timeout: 5
   min_messages: warning

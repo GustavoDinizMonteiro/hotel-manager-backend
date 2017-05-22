@@ -3,4 +3,8 @@ class Apartament < ApplicationRecord
   validates :balance, presence: true
   validates :checkin, presence: true
   validates :checkout, presence: true
+
+  has_one :device, dependent: :destroy
+
+  belongs_to :user
 end
